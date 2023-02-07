@@ -1,4 +1,4 @@
-package com.example.zenquoteapp
+package com.example.zenquotesapi
 
 import org.junit.Test
 
