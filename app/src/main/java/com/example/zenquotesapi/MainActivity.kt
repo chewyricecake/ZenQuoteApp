@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zenquotesapi.Adapter.RecyclerAdapter
+import com.example.zenquotesapi.Extra.Events
 
 import com.example.zenquotesapi.Models.Quotes
 import com.example.zenquotesapi.ViewModel.QuotesViewModel
@@ -22,7 +23,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         quotesViewModel.get()
-        quotesViewModel.data.observe(this, Observer{list -> setAdapter(list)})
+
+        quotesViewModel.data.observe(this, Observer{
+            when (it) {
+                is Events.Loading ->{
+
+                }
+                is Events.Success ->{
+                    it.let{
+                        it.data?.let{it -> setAdapter(it)}
+                    }
+                }
+                is Events.Error ->{
+                    it.let{
+                        binding.rcvMessage.text = it.msg.toString()
+                    }
+                }
+            }
+        })
     }
 
     fun setAdapter(list: Quotes) = binding.recyclerview.apply{

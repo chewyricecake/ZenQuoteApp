@@ -15,4 +15,11 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/recyclerview"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/rcvMessage">
+    </TextView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
