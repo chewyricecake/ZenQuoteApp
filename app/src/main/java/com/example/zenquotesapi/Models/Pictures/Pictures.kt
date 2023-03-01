@@ -1,0 +1,31 @@
+package com.example.zenquotesapi.Models.Pictures
+
+data class Pictures(
+    val alt_description: String,
+    val blur_hash: String,
+    val color: String,
+    val created_at: String,
+    val current_user_collections: List<Any>,
+    val description: Any,
+    val downloads: Int,
+    val exif: Exif,
+    val height: Int,
+    val id: String,
+    val liked_by_user: Boolean,
+    val likes: Int,
+    val links: Links,
+    val location: Location,
+    val meta: Meta,
+    val promoted_at: String,
+    val public_domain: Boolean,
+    val sponsorship: Any,
+    val tags: List<Tag>,
+    val tags_preview: List<TagsPreview>,
+    val topic_submissions: TopicSubmissionsX,
+    val topics: List<Any>,
+    val updated_at: String,
+    val urls: UrlsX,
+    val user: UserX,
+    val views: Int,
+    val width: Int
+)
